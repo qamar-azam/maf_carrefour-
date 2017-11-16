@@ -1,0 +1,34 @@
+.products{
+    padding-top: 70px;
+    border-top: 1px solid #f6f6f6;
+
+    li{
+        float: left;
+        width: 28.5%;
+
+        &:not( :nth-child(3n) ){
+            margin-right: 7.2%;
+        }
+
+
+        @include bp( iphone ){
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+
+   @include bp( iphone ){
+        text-align: center;    
+   }
+}
+
+.product-image{
+    margin: 0 0 16px;    
+    text-align: center;
+    border: 3px solid #f6f6f6;
+
+    img{
+        margin: auto;
+    }
+}

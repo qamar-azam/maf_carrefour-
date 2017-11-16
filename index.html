@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script src="https://use.fontawesome.com/cae86d8696.js"></script>
+	<link rel="stylesheet" href="assets/css/style.css">	
+</head>
+
+<body>
+<div id="page" class="site group">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>	
+
+	<div id="content" class="site-content">		
+
+		<header id="masthead" class="site-header group">
+			<div class="site-branding">
+				<a href="/" rel="home"><img src="assets/images/logo.png" alt="logo"></a>
+			</div><!-- .site-branding -->			
+
+			<div class="searchform">
+				<form action="#" method="post">
+					<input type="search" placeholder="Search">					
+				</form>
+			</div><!-- .searchform -->
+		</header><!-- #masthead -->
+
+		<div class="signIn-form">
+			<h3>Sign In Now</h3>
+			<h5>Unlock awersome features!</h5>
+
+			<form action="#" method="post" id="signInForm" novalidate>	
+				<p id="formMessage" class="form-message"></p>
+
+				<div class="form-field">
+					<div class="form-error"></div>
+					<input type="text" id="username" name="username" required>
+					<label class="floating-label">Username</label>
+				</div><!-- .form-field -->
+
+				<div class="form-field">
+					<div class="form-error"></div>
+					<input type="password" id="password" name="password" required>
+					<label class="floating-label">Password</label>
+				</div><!-- .form-field -->
+
+				<div class="form-inlineField">
+					<input type="checkbox" name="keep-logged-in" id="keep-logged-in">
+					<label for="keep-logged-in">Keep me logged in</label>
+				</div><!-- .form-inlineField -->
+
+				<div class="form-inlineField">
+					<a href="#" class="forget-password-link">Forgot password?</a>
+				</div><!-- .form-inlineField -->
+
+				<input type="submit" value="SIGN IN">
+			</form><!-- #signInForm -->
+		</div><!-- .signIn-form -->
+
+		<div class="products">
+			<ul>
+				<li>
+					<figure class="product-image">
+						<img src="assets/images/product-image.jpg" alt="" class="img-responsive">
+					</figure><!-- .product-image -->
+					<h3 class="product-title">iPhone6 Black</h3>
+					<p class="price">AED 1000</p>
+				</li>
+
+				<li>
+					<figure class="product-image">
+						<img src="assets/images/product-image.jpg" alt="" class="img-responsive">
+					</figure><!-- .product-image -->
+					<h3 class="product-title">iPhone6 Black</h3>
+					<p class="price">AED 1000</p>
+				</li>
+
+				<li>
+					<figure class="product-image">
+						<img src="assets/images/product-image.jpg" alt="" class="img-responsive">
+					</figure><!-- .product-image -->
+					<h3 class="product-title">iPhone6 Black</h3>
+					<p class="price">AED 1000</p>
+				</li>
+			</ul>
+		</div><!-- .products -->
+
+	</div><!-- #content -->		
+</div><!-- #page -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/js/formValidation.js"></script>
+
+</body>
+</html>

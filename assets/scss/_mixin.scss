@@ -1,0 +1,115 @@
+@mixin bp($point) {
+  @if $point == ipad-ls {
+    @media (max-width: rem(1024) ) { @content; }
+  }  
+  @else if $point == ipad {
+    @media (max-width: rem(768) ) { @content; }
+  }
+  @else if $point == iphone-potrait {
+    @media (max-width: rem(420) ) { @content; }
+  }
+  @else if $point == iphone {
+    @media (max-width: rem(568) ) { @content; }
+  }
+}
+
+
+$browser-context: 16; // Default
+
+@function rem($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}rem;
+}
+
+
+@mixin declare-font-face($font-family, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal)
+{
+  @font-face
+  {
+    font-family: '#{$font-family}';
+    src: url('fonts/#{$font-filename}.eot');
+    src: url('fonts/#{$font-filename}.eot?#iefix') format('embedded-opentype'),
+    url('fonts/#{$font-filename}.woff') format('woff'),
+    url('fonts/#{$font-filename}.ttf') format('truetype'),
+    url('fonts/#{$font-filename}.svg##{$font-family}') format('svg');
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-stretch: $font-stretch;
+  }
+}
+
+@mixin vertical-align {
+    display: table-cell; vertical-align:middle;
+}
+@mixin vertical-align-2 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+
+@mixin transition($what: all, $length: 1s, $easing: ease-in-out) {
+    -moz-transition:    $what $length $easing;
+    -o-transition:      $what $length $easing;
+    -webkit-transition: $what $length $easing;
+    -ms-transition:     $what $length $easing;
+    transition:         $what $length $easing;
+
+}
+
+@mixin hover-transition($sec: .25s, $effect:ease-in-out){
+    -webkit-transition: all $sec $effect;
+    -moz-transition: all $sec $effect;
+    -ms-transition: all $sec $effect;
+    -o-transition: all $sec $effect;
+    transition: all $sec $effect;
+}
+
+
+@mixin angle-edge($pos-top:null, $angle-top:null, $pos-btm:null, $angle-btm:null){
+    width: 100%;
+    position: relative;
+
+    &::before,
+    &::after{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: inherit;
+        z-index: -1;
+        transition: ease all .5s;
+        -webkit-backface-visibility: hidden;
+    }
+
+    @if $pos-top{
+        &::before{
+            @if $pos-top == 'topleft'{
+                top: 0;
+                transform-origin: right top;
+                transform: skewY($angle-top);
+            }
+
+            @if $pos-top == 'topright' {
+                top: 0;
+                transform-origin: left top;
+                transform: skewY(-$angle-top);
+            }
+        }
+    }
+
+    @if $pos-btm{
+        &::after{
+            @if $pos-btm == 'bottomleft' {
+                bottom: 0;
+                transform-origin: right bottom;
+                transform: skewY(-$angle-btm);
+            }
+
+            @if $pos-btm == 'bottomright' {
+                bottom: 0;
+                transform-origin: left bottom;
+                transform: skewY($angle-btm);
+            }
+        }
+    }
+}
